@@ -63,6 +63,18 @@ $(document).ready(function() {
       }
     });
 });
+    // if downloaded file is empty use this code
+    $('#bfsi_customer_table').DataTable({
+        dom: 'Bfrtip', // Include buttons for export
+            buttons: [
+                {
+                    extend: 'csv',
+                    exportOptions: {
+                        columns: ':visible' // Include only visible columns
+                    }
+                }
+            ]
+            });
     function getdata(){
         var customer_name = $("#customer_name").val();
         var id = $("#id").val();
